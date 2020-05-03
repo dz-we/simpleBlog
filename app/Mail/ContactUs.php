@@ -1,0 +1,34 @@
+<?php
+
+namespace App\Mail;
+
+use Illuminate\Bus\Queueable;
+use Illuminate\Mail\Mailable;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Support\Facades\Auth;
+
+class ContactUs extends Mailable
+{
+    use Queueable, SerializesModels;
+    public $name;
+    public $email;
+    public $subject;
+    public $body;
+
+    public function __construct($name, $email, $subject, $body)
+    {
+        $this->name = $name;
+        $this->email = $email;
+        $this->subject=$subject;
+        $this->body = $body;
+                
+   
+    }
+
+ 
+    public function build()
+    {        
+        return $this->view('email.contact')->from('noreply@aissa.com');
+    }
+}

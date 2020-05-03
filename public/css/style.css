@@ -1,0 +1,9 @@
+.comment, .comments li{
+    margin: 0 0 10px 0;
+    padding: 0;
+    border-bottom: 2px solid #0069d9;    
+}
+.comments li{
+    list-style: none;
+    
+}
